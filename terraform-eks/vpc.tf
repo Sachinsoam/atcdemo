@@ -2,7 +2,7 @@
 module "vpc" {
   # Source of the VPC module from the Terraform AWS Modules registry
   source  = "terraform-aws-modules/vpc/aws"
-  version = "2.64.0"
+  version = "5.15.0"
 
   # Name of the VPC
   name = "vpc-module-demo"
