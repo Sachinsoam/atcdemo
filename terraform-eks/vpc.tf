@@ -16,6 +16,13 @@ module "vpc" {
   # IP ranges for public subnets
   public_subnets  = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
 
+
+  # Enable public IP auto-assignment for public subnets
+  public_subnet_tags = {
+    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+    "kubernetes.io/role/elb"                    = "1"
+  }
+
   # Disables NAT gateway creation
   enable_nat_gateway = false
   # Disables VPN gateway creation
