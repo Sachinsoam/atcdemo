@@ -10,6 +10,7 @@ variable "aws_region" {
   default = "ap-southeast-1"
 }
 
+
 variable "AWS_ACCESS_KEY" {
   type      = string
   sensitive = true

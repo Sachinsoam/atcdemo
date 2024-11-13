@@ -1,7 +1,8 @@
 # Configure the AWS provider to interact with AWS services
 provider "aws" {
-  access_key = var.AWS_ACCESS_KEY
-  secret_key = var.AWS_SECRET_KEY
+  access_key = var.AWS_ACCESS_KEY     # Your AWS Access Key
+  secret_key = var.AWS_SECRET_KEY     # Your AWS Secret Key
+  region     = var.aws_region         # Specify the AWS region for the provider
 }
 
 # Data source to get the current AWS region information
@@ -18,5 +19,3 @@ data "aws_availability_zones" "available" {
 provider "http" {
   # Enables interaction with HTTP endpoints, useful for accessing data from external APIs
 }
-
-
