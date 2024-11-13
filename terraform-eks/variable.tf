@@ -10,7 +10,12 @@ variable "aws_region" {
   default = "ap-southeast-1"
 }
 
-#Defining variable for access the 
-variable "AWS_ACCESS_KEY" {}
+variable "AWS_ACCESS_KEY" {
+  type      = string
+  sensitive = true
+}
 
-variable "AWS_SECRET_KEY" {}
+variable "AWS_SECRET_KEY" {
+  type      = string
+  sensitive = true
+}
