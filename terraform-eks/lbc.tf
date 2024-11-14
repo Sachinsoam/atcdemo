@@ -59,6 +59,9 @@ resource "helm_release" "aws_lbc" {
     value = "aws-load-balancer-controller"
   }
 
-  # Define dependency on Cluster Autoscaler Helm release, if required
-  depends_on = [helm_release.cluster_autoscaler]
+  # Removed the `depends_on` line
 }
+
+  # Define dependency on Cluster Autoscaler Helm release, if required
+  #depends_on = [helm_release.cluster_autoscaler]
+
