@@ -59,6 +59,12 @@ resource "helm_release" "aws_lbc" {
     value = "aws-load-balancer-controller"
   }
 
+  # Set the vpc-id manually
+  set {
+    name  = "vpcID"
+    value = "vpc-0e8f6fee16414d7a1"  # Replace with your VPC ID
+  }
+
   # Removed the `depends_on` line
 }
 
