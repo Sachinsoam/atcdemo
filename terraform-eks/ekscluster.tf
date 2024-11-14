@@ -48,3 +48,16 @@ resource "aws_eks_node_group" "node" {
     aws_iam_role_policy_attachment.AmazonEC2ContainerRegistryReadOnly,
   ]
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
