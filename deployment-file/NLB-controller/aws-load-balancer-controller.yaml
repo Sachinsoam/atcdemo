@@ -22,3 +22,4 @@ spec:
             - --ingress-class=alb
             - --aws-region=ap-southeast-1
             - --aws-vpc-id=vpc-0e8f6fee16414d7a1 # Specify the VPC ID here
+            - --disable-webhook=true
