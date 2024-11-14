@@ -1,19 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: static-web-app
+  name: nginx
+  labels:
+    app: nginx
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: static-web-app
+      app: nginx
   template:
     metadata:
       labels:
-        app: static-web-app
+        app: nginx
     spec:
       containers:
-      - name: static-web-container
-        image: public.ecr.aws/w1o1o0f7/atcdemo:v1 # Replace with your ECR image URL
+      - name: nginx
+        image: 123456789012.dkr.ecr.us-west-2.amazonaws.com/my-nginx:latest
         ports:
         - containerPort: 80
