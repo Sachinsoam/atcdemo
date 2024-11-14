@@ -16,8 +16,9 @@ spec:
       serviceAccountName: aws-load-balancer-controller
       containers:
         - name: aws-load-balancer-controller
-          image: amazon/aws-alb-ingress-controller:v2.4.0
+          image: amazon/aws-load-balancer-controller:v2.4.0  # Corrected image name
           args:
             - --cluster-name=eks_cluster_levelup
             - --ingress-class=alb
             - --aws-region=ap-southeast-1
+            - --aws-vpc-id=vpc-0e8f6fee16414d7a1 # Specify the VPC ID here
