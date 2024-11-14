@@ -16,7 +16,7 @@ spec:
       serviceAccountName: aws-load-balancer-controller
       containers:
         - name: aws-load-balancer-controller
-          image: amazon/aws-load-balancer-controller:v2.4.0  # Corrected image name
+          image: public.ecr.aws/eks/aws-load-balancer-controller:v2.4.0  # Corrected image name
           args:
             - --cluster-name=eks_cluster_levelup
             - --ingress-class=alb
