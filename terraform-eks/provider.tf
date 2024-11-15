@@ -20,8 +20,3 @@ provider "http" {
   # Enables interaction with HTTP endpoints, useful for accessing data from external APIs
 }
 
-provider "helm" {
-  kubernetes {
-    config_path = "~/.kube/config"
-  }
-}
