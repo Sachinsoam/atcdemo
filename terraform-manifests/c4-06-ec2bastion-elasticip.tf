@@ -6,3 +6,5 @@ resource "aws_eip" "bastion_eip" {
   domain     = "vpc"
   tags = local.common_tags  
 }
+
+
