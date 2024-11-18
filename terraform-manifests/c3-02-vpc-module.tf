@@ -28,7 +28,7 @@ module "vpc" {
   
   # NAT Gateways - Outbound Communication
   enable_nat_gateway = var.vpc_enable_nat_gateway 
-  #single_nat_gateway = var.vpc_single_nat_gateway
+  single_nat_gateway = var.vpc_single_nat_gateway
 
   # VPC DNS Parameters
   enable_dns_hostnames = true
