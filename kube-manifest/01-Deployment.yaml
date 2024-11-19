@@ -15,7 +15,7 @@ spec: # Dictionary
     spec:
       containers: # List
         - name: myapp1-container
-          image:  push public.ecr.aws/q1x1f8q8/atcdemo:v2  
+          image: public.ecr.aws/q1x1f8q8/atcdemo:v2       
           ports: 
             - containerPort: 80  
     
