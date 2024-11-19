@@ -1,10 +1,25 @@
-# Use an official NGINX image as a base
+# Use the official NGINX image as a base
 FROM nginx:latest
 
-# Copy the HTML file into the NGINX directory
-COPY index.html /usr/share/nginx/html/index.html
+# Metadata label for the Docker image
+LABEL maintainer="Sachin <sachinsoam8869@gmail.com>" \
+      description=" Dockerfile for serving a static website with NGINX"
 
+# Update and upgrade the system packages
+RUN apt-get update && apt-get upgrade -y \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Set a working directory
+WORKDIR /usr/share/nginx/html
 
-# Expose port 80 for the web server
+# Copy all website files (e.g., HTML, CSS, JS) into the NGINX directory
+COPY ./ /usr/share/nginx/html
+
+# Set file permissions for security
+RUN chmod -R 755 /usr/share/nginx/html
+
+# Expose the port NGINX will serve on
 EXPOSE 80
+
+# Use the default NGINX command to run the server
+CMD ["nginx", "-g", "daemon off;"]
